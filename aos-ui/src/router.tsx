@@ -11,7 +11,14 @@ export const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <ErrorBoundary />,
     children: [
-      { path: '/', element: <Home /> },
+      {
+        path: '/',
+        element: <Home />,
+        children: [
+          { path: '/chat', element: <div>Chat</div> },
+          { path: '/inbox', element: <div>Inbox</div> },
+        ],
+      },
       // { path: '/safe-tx', element: <SafeTx /> },
       // {
       //   path: '/tools',
